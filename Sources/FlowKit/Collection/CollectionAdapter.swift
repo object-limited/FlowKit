@@ -105,11 +105,11 @@ open class CollectionAdapter<M: ModelProtocol, C: CellProtocol>: CollectionAdapt
 			
 		case .willDisplay:
 			guard let callback = self.on.willDisplay else { return nil }
-			callback((context.cell as! C), context.path!)
+			callback(Context<M,C>(generic: context), context.path!)
 			
 		case .endDisplay:
 			guard let callback = self.on.endDisplay else { return nil }
-			callback((context.cell as! C), context.path!)
+			callback(Context<M,C>(generic: context), context.path!)
 			
 		case .shouldShowEditMenu:
 			guard let callback = self.on.shouldShowEditMenu else { return nil }

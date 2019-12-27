@@ -61,8 +61,8 @@ public extension CollectionAdapter {
 		public var didHighlight: ((EventContext) -> Void)? = nil
 		public var didUnhighlight: ((EventContext) -> Void)? = nil
 		public var shouldHighlight: ((EventContext) -> Bool)? = nil
-		public var willDisplay: ((_ cell: C, _ path: IndexPath) -> Void)? = nil
-		public var endDisplay: ((_ cell: C, _ path: IndexPath) -> Void)? = nil
+        public var willDisplay: ((EventContext, IndexPath) -> Void)? = nil
+        public var endDisplay: ((EventContext, IndexPath) -> Void)? = nil
 		public var shouldShowEditMenu: ((EventContext) -> Bool)? = nil
 		public var canPerformEditAction: ((EventContext) -> Bool)? = nil
 		public var performEditAction: ((_ ctx: EventContext, _ selector: Selector, _ sender: Any?) -> Void)? = nil
